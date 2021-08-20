@@ -1,0 +1,24 @@
+ 4438  sudo rm -r /usr/local/go
+ 4439  sudo wget https://dl.google.com/go/go1.16.5.linux-armv6l.tar.gz
+
+
+ 4443  sudo tar -C /usr/local/ -xvf go1.16.5.linux-armv6l.tar.gz 
+ 4444  mkdir ~/go
+
+
+ 4445  sudo nano ./.profile
+ #Add these line to .profile file
+ PATH=$PATH:/usr/local/go/bin
+ GOPATH=$HOME/go
+
+ 4452  source ./.profile
+ 
+ 4453  go version
+ 4454  go get github.com/github/git-lfs
+ 4455  sudo cp ./go/bin/git-lfs /usr/local/bin/
+ 4456  git lfs install
+ 4457  git lfs migrate import --include="*.txt"
+
+ #Now it can push those large file larger than 100MB
+ 4478  git push
+  
